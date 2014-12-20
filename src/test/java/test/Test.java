@@ -11,7 +11,7 @@ public class Test {
   public void testValidation() {
 
     Validator instance = ESAPI.validator();
-    Assert.assertTrue(instance.isValidInput("test", "jeff.williams@aspectsecurity.com", "Email", 100, false));    
+    Assert.assertTrue(instance.isValidInput("test", "eduardo.macarron@mail.com", "Email", 100, false));    
     
   }
 
@@ -19,7 +19,7 @@ public class Test {
   public void testEncoding() {
 
     Encoder encoder = ESAPI.encoder();
-    System.out.println(encoder.encodeForHTML("<b>hola</b>"));    
+    Assert.assertEquals("&lt;b&gt;test&lt;&#x2f;b&gt;", encoder.encodeForHTML("<b>test</b>"));    
     
   }
   
